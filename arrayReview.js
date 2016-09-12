@@ -3,17 +3,31 @@ var threeItems = [1,2,3];
 //alert the result of your function
 
   //code here
-
+function last( arr ){
+  return arr[arr.length-1];
+}
+console.log( last( threeItems ) );
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//Loop through evenArray removing all values that aren't even 
+//Loop through evenArray removing all values that aren't even
 var evenArray = [1,2,3,6,22,98,45,23,22,12];
 
   //code here
+
+function removeOdd( arr ){
+  for (var i = arr.length-1; i > 0; i--) {
+    if ( arr[i] % 2 !== 0) {
+      arr.splice( i, 1 );
+    }
+  }
+  return arr;
+}
+
+console.log( removeOdd(evenArray ) );
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -29,18 +43,33 @@ var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   //code here
 
 
+function checkRandom( arr ){
+  var randomNum = getRandomArbitrary();
+  var test = false;
+  console.log( randomNum );
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === randomNum) {
+      test = true;
+    }
+  }
+  return test;
+}
+
+console.log( checkRandom( randomArray) );
+
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
 //Create a copy of first and save it into second. Then, add 6 and 7 to the end of second. When you run this, first should be just [1,2,3,4,5] and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
 var first = [1,2,3,4,5];
-var second;
+var second = first.slice();
+second.push( 6, 7 );
 
   //code here
 
-alert(first) //[1,2,3,4,5];
-alert(second) //[1,2,3,4,5,6,7];
+console.log(first); //[1,2,3,4,5];
+console.log(second); //[1,2,3,4,5,6,7];
 
 
 
@@ -52,18 +81,35 @@ alert(second) //[1,2,3,4,5,6,7];
 var sentence = "Dev Mountain is the best"
 
   //code here
+function longest ( str ){
+  var test = str.split(" ");
+  var chars = 0;
+  var longestWord = null;
+  for (var i = 0; i < test.length; i++) {
+    if ( test[i].length > chars ) {
+      chars = test[i].length;
+      longestWord = test[i];
+    }
+  }
+  return longestWord;
+}
 
 
+console.log( longest( sentence ) );
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//write a function called capitalize that takes in the myPoem variable and capitalizes every word 
+//write a function called capitalize that takes in the myPoem variable and capitalizes every word
 var myPoem = 'What is a jQuery but a misunderstood object?'
 //What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
 
   //code here
-
+function capitalize( str ){
+  var word = str.split(" ");
+  var sentence = null;
+  for
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
